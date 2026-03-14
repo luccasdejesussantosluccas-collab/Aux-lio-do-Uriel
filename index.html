@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Painel Elite V2 - Simulado</title>
+    <style>
+        body { background-color: #0a0a0a; color: #00ffcc; font-family: 'Courier New', Courier, monospace; text-align: center; }
+        .menu { border: 2px solid #00ffcc; border-radius: 10px; padding: 15px; width: 90%; max-width: 350px; margin: auto; margin-top: 20px; box-shadow: 0 0 15px #00ffcc; }
+        .switch-container { display: flex; justify-content: space-between; align-items: center; margin: 15px 0; padding: 5px; border-bottom: 1px dotted #333; }
+        .btn-green { background: #00ffcc; color: black; border: none; padding: 12px; margin: 5px; border-radius: 5px; width: 100%; font-weight: bold; cursor: pointer; }
+        .btn-red { background: #ff3333; color: white; border: none; padding: 12px; margin: 5px; border-radius: 5px; width: 100%; font-weight: bold; cursor: pointer; }
+        input[type=range] { width: 100%; accent-color: #00ffcc; }
+        h3 { margin: 10px 0; color: #fff; text-shadow: 2px 2px #ff0000; }
+        .status-on { color: #00ff00; font-size: 12px; }
+    </style>
+</head>
+<body>
+
+    <div class="menu">
+        <h3>PAINEL HS ELITE</h3>
+        <p class="status-on">[SISTEMA ANTI-BAN: ATIVADO]</p>
+        <p class="status-on">[ESTADO: BLACKLIST FREE]</p>
+        <hr>
+
+        <div style="margin: 15px 0;">
+            <p>CAMPO DE VISÃO (FOV): <span id="fov">180</span>°</p>
+            <input type="range" min="0" max="360" value="180" oninput="document.getElementById('fov').innerText = this.value">
+        </div>
+
+        <div class="switch-container">
+            <span>ATIVAR AUTO-HS (98%)</span>
+            <input type="checkbox" id="hs98">
+        </div>
+
+        <div class="switch-container">
+            <span>MIRA NÃO TREMER (FIX)</span>
+            <input type="checkbox" id="fix">
+        </div>
+
+        <div class="switch-container">
+            <span>MIRA NÃO PINAR (ZERO)</span>
+            <input type="checkbox" id="pinar">
+        </div>
+
+        <hr>
+
+        <button class="btn-green" onclick="iniciar('Free Fire Normal')">ENTRAR FF NORMAL</button>
+        <button class="btn-red" onclick="iniciar('Free Fire MAX')">ENTRAR FF MAX</button>
+        
+        <p style="font-size: 9px; margin-top: 15px; color: #666;">VERSÃO 2.0.1 - EXCLUSIVA MOBILE</p>
+    </div>
+
+    <script>
+        function iniciar(jogo) {
+            let hs = document.getElementById('hs98').checked;
+            if(hs) {
+                alert("Simulando Injeção de Código...\nFunção 98% HS carregada para o " + jogo);
+            } else {
+                alert("Abrindo " + jogo + " sem auxílio de mira.");
+            }
+        }
+    </script>
+
+</body>
+</html>
